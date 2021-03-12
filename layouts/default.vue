@@ -3,12 +3,12 @@
  
       <AppBar />
   <!-- <v-main> -->
-   <video autoplay playsinline muted loop id="myVideo">
+   <!-- <video autoplay playsinline muted loop id="myVideo">
         <source
           src="~/assets/wolf_background.mp4"
           type="video/mp4"
         />
-      </video>
+      </video> -->
     
   <div>
    <nuxt />
