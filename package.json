@@ -9,11 +9,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/vuetify": "^1.11.3",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
-    "@nuxtjs/vuetify": "^1.11.3"
+    "vue-mq": "^1.0.1"
   },
-  "devDependencies": {
-   
-  }
+  "devDependencies": {}
 }
