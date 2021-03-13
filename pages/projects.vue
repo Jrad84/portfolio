@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Kartclass :kartclass="kartclass" />
+  <div >
+    <Kartclass :kartclass="kartclass" :followLink="followLink" />
     <CV :item="cv" />
  
   </div>
@@ -37,6 +37,11 @@ const data = {
                 "Nuxt js",
                 "Django REST Framework",
                 "PostgreSQL"
+               ],
+               links: [
+                 "Front-end code",
+                 "Back-end code",
+                 "View site"
                ]
         }
 const cvData = {
