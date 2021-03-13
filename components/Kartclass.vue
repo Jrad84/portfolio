@@ -53,16 +53,11 @@
               </div>
             </v-card>
               <v-card>
-                   
                      
                 <v-row class="d-flex justify-center pa-2">
                         <div v-for="link in kartclass.links" 
                             :key="link" 
-                           
-                           
                         >
-                        
-                        <!-- <v-col cols="12" xs="1"> -->
                         <v-btn 
                           small 
                           class="mt-4 ml-12"
@@ -71,8 +66,6 @@
                           @click="followLink(link)"
                           >
                           {{link}}</v-btn>
-                        <!-- </v-col> -->
-                          
                       </div>
                       </v-row>
                   
@@ -106,13 +99,27 @@
 
 
 export default { 
-computed: {
-      cols () {
-        const { lg, sm } = this.$vuetify.breakpoint
-        return lg ? [3, 9] : sm ? [9, 3] : [6, 6]
-      },
-    },
+
     props: ["kartclass", "followLink"],
+      methods:{
+      followLink(link){
+           console.log("link: " + link)
+        switch (link) {
+          case "Front-end Code":
+              window.open("https://github.com/Jrad84/DS_Karting/", "_blank");
+             
+            break;
+          case "Back-end Code":
+              window.open("https://github.com/Jrad84/kartclass-backend/", "_blank");
+              break;
+          case "Demo":
+              window.open("https://drive.google.com/file/d/1dRIsZJWDGZ-3z83TiQ9SWnekvjutmiqQ/view?usp=sharing", "_blank");
+              break;
+          default:
+            break;
+        }
+      }
+    }
 
 }
 </script>

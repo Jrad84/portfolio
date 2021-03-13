@@ -117,7 +117,7 @@ export default {
         switch (link) {
           case "Front-end Code":
               window.open("https://github.com/Jrad84/DS_Karting/", "_blank")
-            
+              console.log("link: " + link)
             break;
           case "Back-end Code":
               window.open("https://github.com/Jrad84/kartclass-backend/", "_blank");
