@@ -29,11 +29,37 @@
                     class="mr-1"
                     
                      >
+                     
+                     <div class="mx-2">
+                         <v-row>
                       <img
-                      id="secondImg"
+                      class="kcImage"
                       loading="lazy"
-                      :src="`${kartclass.image2}`"
+                      :src="`${kartclass.beginner}`"
                     />
+                    </v-row>
+                    <v-row>
+                     <img
+                     class="kcImage"
+                      loading="lazy"
+                      :src="`${kartclass.club}`"
+                    />
+                    </v-row>
+                    <v-row>
+                     <img
+                      class="kcImage"
+                      loading="lazy"
+                      :src="`${kartclass.regional}`"
+                    />
+                    </v-row>
+                    <v-row>
+                     <img
+                     class="kcImage"
+                      loading="lazy"
+                      :src="`${kartclass.state}`"
+                    />
+                    </v-row>
+                    </div>
                  </v-card>
                   
               </v-col>
@@ -51,12 +77,14 @@
                          {{kartclass.description}}
                        
                         <v-chip
+                          id="chip"
                           class="child3"
                           color="#47539b"
                           v-for="t in kartclass.tech" :key="t"
                         >
                           {{t}}
                         </v-chip>
+                      
                         </v-card-text>
                       <div v-for="link in kartclass.links" :key="link">
                         
@@ -70,8 +98,6 @@
                           {{link}}</v-btn>
                       
                       </div>
-                       
-                     
              
                 </v-card>
                 
@@ -101,14 +127,14 @@ export default {
   min-height: 250px;
   object-fit: contain;
 }
-#secondImg {
-       max-height: 400px;
+
+.kcImage {
+  max-height: 400px;
   max-width: 200px;
   min-width: 100%;
-  min-height: 400px;
+  min-height: 100px;
   object-fit:contain;
 }
-
 #text {
     color:white;
     white-space: pre-line;
@@ -132,9 +158,11 @@ export default {
 }
 .child3{
  height: 20px;
- 
  justify-content: space-between;
- 
-   
+}
+
+#chip {
+    padding: 15px;
+    margin-left: 25px;
 }
 </style>

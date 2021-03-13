@@ -11,12 +11,20 @@ import Image1 from "~/assets/kc1.png"
 import Image2 from "~/assets/mask_256_40.png"
 import Image3 from "~/assets/spaceX.jpg"
 import Image4 from "~/assets/kc2.png"
+import Beginner from "~/assets/beginner.png"
+import Club from "~/assets/club.png"
+import Regional from "~/assets/regional.png"
+import State from "~/assets/state.png"
 import Kartclass from "~/components/Kartclass"
 import CV from "~/components/CV"
 const data = {
               title: "KartClass",
               image1: Image1,
               image2: Image4,
+              beginner: Beginner,
+              club: Club,
+              regional: Regional,
+              state:State,
               subtitle: "Subscription based Coaching web app",
               description: "KartClass is a website I was commissioned to build by 18x Australian Go Karting champion, David Sera. " +
                  "It integrates Stripe payments platform & Python handles all of the business logic on the backend. " +
@@ -92,6 +100,10 @@ export default {
       Image2,
       Image3,
       Image4,
+      Beginner,
+      Club,
+      State,
+      Regional,
       Kartclass,
       CV
     },
