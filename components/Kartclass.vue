@@ -1,9 +1,8 @@
 <template>
+<no-ssr>
 <v-container>
     <div class="col-xs-4 d-sm-block center-md">
-        
       <v-row class="mt-12">
-            
             <v-col
                   cols="12"
                   xs="1"
@@ -15,36 +14,38 @@
                 class="d-flex align-content-start"
                 max-width="1244"
               >
-             
-              <v-col xs="1">
-               
-                    
+              <v-col xs="12">
                   <v-img
                     max-width="750"
                     max-height="400"
-                    
+                    height="auto"
+                    width="100%"
                     :src="`${kartclass.image1}`"
                   />
-               
+                
               </v-col>
               <div class="d-flex align-start flex-wrap">
-              <v-col  xs="1">
+              <v-col  xs="12">
                  <v-card 
                     id="child1"
-                    class="d-flex child-flex"
+                     class="d-flex align-content-start"
+                max-width="1244"
                     
                      >
                      
                      <div class="float-sm-left">
+                        
                          <v-row>
                             <v-img
                                 class="mt-3 mr-2"
                                 max-width="365"
                                 max-height="360"
-                                
+                                 height="auto"
+                                width="100%"
                                 :src="`${kartclass.image2}`"
                             />
                          </v-row>
+                        
                     </div>
                  </v-card>
                   
@@ -97,6 +98,7 @@
       </v-row>
     </div>
 </v-container>
+</no-ssr>
 </template>
 
 <script>
