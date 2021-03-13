@@ -33,7 +33,7 @@
                     
                      >
                      
-                     <div class="float-sm-left">
+                     <div class="d-sm-none d-md-flex">
                         
                          <v-row>
                             <v-img
@@ -52,17 +52,17 @@
               </v-col>
               </div>
             </v-card>
-              <v-card 
+              <v-card>
                    
-                     >
-                           <v-row class="ml-12" align="center">
-                      <div v-for="link in kartclass.links" 
-                      :key="link" 
-                      justify-start
-                      class="d-flex align-center flex-wrap"
-                      >
+                     
+                <v-row class="d-flex justify-center pa-2">
+                        <div v-for="link in kartclass.links" 
+                            :key="link" 
+                           
+                           
+                        >
                         
-                        <v-col cols="12" xs="1">
+                        <!-- <v-col cols="12" xs="1"> -->
                         <v-btn 
                           small 
                           class="mt-4 ml-12"
@@ -71,26 +71,27 @@
                           @click="followLink(link)"
                           >
                           {{link}}</v-btn>
-                        </v-col>
+                        <!-- </v-col> -->
                           
                       </div>
                       </v-row>
                   
                    <div  class="d-flex align-content-start">
-                        <v-card-text id="text"  class="d-flex align-start flex-wrap">
+                        <v-card-text id="text"  class="d-flex flex-wrap">
                             
                          {{kartclass.description}}
-                      
+                    
+                         <v-row class="d-flex justify-center mx-2 mb-2">
                         <v-chip
                           id="chip"
-                          class="d-flex align-start flex-column"
+                          
                           color="#47539b"
                           v-for="t in kartclass.tech" :key="t"
                         >
                           {{t}}
                         </v-chip>
-                      
-                        </v-card-text>
+                         </v-row>
+                          </v-card-text>
                          </div>
                 </v-card>
           </v-col>
