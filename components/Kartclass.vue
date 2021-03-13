@@ -1,10 +1,10 @@
 <template>
-<v-container>
+<v-container d-flex>
       <v-row class="mt-12">
             
             <v-col
-                 
                   cols="12"
+                  xs="1"
                   class="pa-4"
                   fluid="true"
             >
@@ -134,6 +134,7 @@ export default {
   min-width: 100%;
   min-height: 100px;
   object-fit:contain;
+  margin-top: 2px;
 }
 #text {
     color:white;
