@@ -1,37 +1,29 @@
 <template>
 <no-ssr>
 <v-container>
-    <div class="col-xs-4 d-sm-block center-md">
+    <div >
       <v-row class="mt-12">
             <v-col
-                  cols="12"
-                  xs="1"
-                  class="pa-4"
                   fluid="true"
             >
                <v-card
                id="parent"
                 class="d-flex align-content-start"
-               
               >
-              <v-col xs="12">
+              <v-col >
                   <v-img
-                    max-width="750"
+                    :max-width="width"
                     max-height="500"
                     height="auto"
                     width="100%"
                     :src="`${kartclass.image1}`"
                   />
-                
               </v-col>
-            
+             <div class="d-sm-none d-none d-md-flex">
               <v-col >
                  <v-card 
                     id="child1"
                      >
-                     
-                     <div class="d-sm-none d-none d-md-flex">
-                        
                          <v-row>
                             <v-img
                                 class="mt-3 mr-2"
@@ -42,16 +34,13 @@
                                 :src="`${kartclass.image2}`"
                             />
                          </v-row>
-                        
-                    </div>
                  </v-card>
-                  
               </v-col>
-              
+               </div>
             </v-card>
-              <v-card>
+              <v-card >
                      
-                <v-row class="d-flex justify-center pa-2">
+                <v-row class="d-flex justify-center">
                         <div v-for="link in kartclass.links" 
                             :key="link" 
                         >
@@ -66,25 +55,23 @@
                       </div>
                       </v-row>
                   
-                   <div  class="d-flex align-content-start">
-                        <v-card-text id="text"  class="d-flex flex-wrap">
+                    <div  class="d-flex align-content-start">
+                        <v-card-text id="text"  class="d-flex flex-wrap mt-2">
                             
                          {{kartclass.description}}
                     
-                         <v-row class="d-flex justify-center mx-2 mb-2">
-                      
-                            <v-chip
-                            id="chip"
-                            small="$vuetify.breakpoint.mobile"
-                            color="#47539b"
-                            v-for="t in kartclass.tech" :key="t"
-                            >
-                       
+                         <v-row class="d-flex justify-center mx-2 mb-2 mt-6">
+                        <v-chip
+                          id="chip"
+                          class="pa-4 mx-8"
+                          color="#47539b"
+                          v-for="t in kartclass.tech" :key="t"
+                        >
                           {{t}}
                         </v-chip>
                          </v-row>
                           </v-card-text>
-                         </div>
+                    </div>
                 </v-card>
           </v-col>
           
@@ -98,7 +85,18 @@
 
 
 export default { 
-
+  computed: {
+      width () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 450
+          case 'sm': return 400
+          case 'md': return 500
+          case 'lg': return 750
+          case 'xl': return 800
+        }
+      },
+     
+    },
     props: ["kartclass", "followLink"],
       methods:{
       followLink(link){
@@ -124,7 +122,7 @@ export default {
 </script>
 
 <style scoped>
-#mainImg {
+/* #mainImg {
  
    max-height: 400px;
   max-width: 400;
@@ -170,5 +168,5 @@ export default {
 #chip {
     padding: 15px;
     margin-left: 25px;
-}
+} */
 </style>

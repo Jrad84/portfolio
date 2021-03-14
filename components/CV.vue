@@ -4,17 +4,14 @@
     <div class="col-xs-4 d-sm-block center-md">
       <v-row class="mt-12">
             <v-col
-                
-                 
                   class="pa-4"
                   fluid="true"
             >
                <v-card
                id="parent"
                 class="d-flex align-content-start"
-               
               >
-              <v-col   :cols="cols">
+              <v-col >
                   <v-img
                     :max-width="width"
                     max-height="500"
@@ -24,7 +21,8 @@
                   />
                 
               </v-col>
-               <v-col   :cols="cols">
+               <div class="d-sm-none d-none d-md-flex">
+               <v-col >
                   <v-img
                     :max-width="width"
                     max-height="510"
@@ -34,7 +32,7 @@
                   />
                 
               </v-col>
-            
+               </div>
               
             </v-card>
            
@@ -94,15 +92,7 @@ export default {
           case 'xl': return 800
         }
       },
-      cols () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 1
-          case 'sm': return 2
-          case 'md': return 6
-          case 'lg': return 6
-          case 'xl': return 12
-        }
-      },
+     
     },
     props:["item"]
 }
