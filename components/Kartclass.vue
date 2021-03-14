@@ -12,7 +12,7 @@
                <v-card
                id="parent"
                 class="d-flex align-content-start"
-                max-width="1244"
+               
               >
               <v-col xs="12">
                   <v-img
@@ -25,7 +25,7 @@
                 
               </v-col>
               <div class="d-flex align-start flex-wrap">
-              <v-col  xs="12">
+              <v-col sm="1" xs="1">
                  <v-card 
                     id="child1"
                      class="d-flex align-content-start"
@@ -33,7 +33,7 @@
                     
                      >
                      
-                     <div class="d-sm-none d-md-flex">
+                     <div class="d-sm-none d-xs-none d-md-flex">
                         
                          <v-row>
                             <v-img
