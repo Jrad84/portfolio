@@ -17,23 +17,20 @@
               <v-col xs="12">
                   <v-img
                     max-width="750"
-                    max-height="400"
+                    max-height="500"
                     height="auto"
                     width="100%"
                     :src="`${kartclass.image1}`"
                   />
                 
               </v-col>
-              <div class="d-flex align-start flex-wrap">
-              <v-col sm="1" xs="1">
+            
+              <v-col >
                  <v-card 
                     id="child1"
-                     class="d-flex align-content-start"
-                max-width="1244"
-                    
                      >
                      
-                     <div class="d-sm-none d-xs-none d-md-flex">
+                     <div class="d-sm-none d-none d-md-flex">
                         
                          <v-row>
                             <v-img
@@ -50,7 +47,7 @@
                  </v-card>
                   
               </v-col>
-              </div>
+              
             </v-card>
               <v-card>
                      
@@ -75,12 +72,14 @@
                          {{kartclass.description}}
                     
                          <v-row class="d-flex justify-center mx-2 mb-2">
-                        <v-chip
-                          id="chip"
-                          
-                          color="#47539b"
-                          v-for="t in kartclass.tech" :key="t"
-                        >
+                      
+                            <v-chip
+                            id="chip"
+                            small="$vuetify.breakpoint.mobile"
+                            color="#47539b"
+                            v-for="t in kartclass.tech" :key="t"
+                            >
+                       
                           {{t}}
                         </v-chip>
                          </v-row>

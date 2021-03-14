@@ -1,73 +1,109 @@
 <template>
+<no-ssr>
 <v-container>
+    <div class="col-xs-4 d-sm-block center-md">
       <v-row class="mt-12">
-            
             <v-col
+                
                  
-                  cols="12"
                   class="pa-4"
                   fluid="true"
             >
                <v-card
-                class="mx-auto"
-                max-width="1244"
+               id="parent"
+                class="d-flex align-content-start"
+               
               >
-              <v-row>
-              <v-col>
-                <div>
-                  <img
-                      
-                      loading="lazy"
-                     
-                      :src="`${item.image}`"
+              <v-col   :cols="cols">
+                  <v-img
+                    :max-width="width"
+                    max-height="500"
+                    height="auto"
+                    width="100%"
+                    :src="`${item.image1}`"
                   />
-               </div>
+                
               </v-col>
-              <v-col>
-                 <v-card class="mr-1" color="#0a75ad" >
-                    <v-card-title>
-                        {{item.title}} 
-                        
-                    </v-card-title>
-                  
-         
-
-                        <v-card-text style="color:white">
-                          {{item.description}}
-                        </v-card-text>
-                        <v-row>
-                      <div v-for="link in item.links" :key="link">
-                        
+               <v-col   :cols="cols">
+                  <v-img
+                    :max-width="width"
+                    max-height="510"
+                    height="auto"
+                    width="100%"
+                    :src="`${item.image2}`"
+                  />
+                
+              </v-col>
+            
+              
+            </v-card>
+           
+              <v-card>
+                     
+                <v-row class="d-flex justify-center pa-2">
+                        <div v-for="link in item.links" 
+                            :key="link" 
+                        >
                         <v-btn 
-                          x-small 
+                          small 
                           class="mt-4 ml-12"
                           max-height="200px"
                           color="#0a75ad"
-                         
+                          @click="followLink(link)"
                           >
                           {{link}}</v-btn>
-                      
                       </div>
-                        </v-row>
-                      <v-chip
-                          class="ma-2 mt-10"
+                      </v-row>
+                  
+                   <div  class="d-flex align-content-start">
+                        <v-card-text id="text"  class="d-flex flex-wrap">
+                            
+                         {{item.description}}
+                    
+                         <v-row class="d-flex justify-center mx-2 mb-2 mt-6">
+                        <v-chip
+                          id="chip"
+                          class="pa-4 mx-8"
                           color="#47539b"
                           v-for="t in item.tech" :key="t"
                         >
                           {{t}}
                         </v-chip>
+                         </v-row>
+                          </v-card-text>
+                         </div>
                  
                 </v-card>
-              </v-col>
-              </v-row>
-            </v-card>
           </v-col>
+          
       </v-row>
+    </div>
 </v-container>
+</no-ssr>
 </template>
 
 <script>
 export default {
+    computed: {
+      width () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 300
+          case 'sm': return 400
+          case 'md': return 500
+          case 'lg': return 550
+          case 'xl': return 800
+        }
+      },
+      cols () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 1
+          case 'sm': return 2
+          case 'md': return 6
+          case 'lg': return 6
+          case 'xl': return 12
+        }
+      },
+    },
     props:["item"]
 }
 </script>
