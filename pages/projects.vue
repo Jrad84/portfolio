@@ -2,6 +2,7 @@
   <div >
     <Kartclass :kartclass="kartclass" :followLink="followLink" />
     <CV :item="cv" />
+    <SpaceX :item="space" />
  
   </div>
 </template>
@@ -14,13 +15,14 @@ import Image4 from "~/assets/kc2.png"
 import Mask from "~/assets/mask.png"
 import Kartclass from "~/components/Kartclass"
 import CV from "~/components/CV"
+import SpaceX from "~/components/SpaceX"
 const data = {
               title: "KartClass",
               image1: Image1,
               image2: Image4,
               description: "KartClass is a website I was commissioned to build by 18x Australian Go Karting champion, David Sera. " +
                   "The goal of Kartclass is to provide the next generation of motor sports enthusiasts with the knowledge that" + 
-                 "is normally reserved for a small minority, helping to level the playing field." + "\n\n" + 
+                 " is normally reserved for a small minority, helping to level the playing field." + "\n\n" + 
                  "Stripe payment platform has been integrated to handle payments & Python handles all of the business logic on the backend. " +
                  "It also features an Admin page with standard CRUD operations and a dashboard displays various user and content metrics calculated via " +
                  "Vue JS computed properties." 
@@ -61,6 +63,21 @@ const cvData = {
                     ]
                
 }
+const sp =    {
+                    title: "SpaceX Mobile app",
+                    image: Image3,
+                   
+                    description: "For my custom project in my mobile app develeopment class, I developed an app to track both upcoming and past SpaceX launches including details about the launch and details about the different rockets used.",
+                    tech: [
+                      "Java",
+                      "GraphQL"
+                     
+                    ],
+                    links: [
+                      "Code"
+                    ]
+  }
+            
 export default {
   head() {
     return {
@@ -70,34 +87,23 @@ export default {
     asyncData(context) {
     let kc = data;
     let c = cvData;
+    let s = sp;
     return {
       kartclass: kc,
-      cv : c
+      cv : c,
+      space : s
     };
   },
     data(){
         return {
           kartclass: {},
-          cv: {}
+          cv: {},
+          space: {}
               
            }
     },
         
-            //      {
-            //         title: "SpaceX Mobile app",
-            //         image: Image3,
-                   
-            //         description: "For my custom project in my mobile app develeopment class, I developed an app to track both upcoming and past SpaceX launches including details about the launch and details about the different rockets used.",
-            //         tech: [
-            //           "Java",
-            //           "GraphQL"
-                     
-            //         ],
-            //         links: [
-            //           "Code"
-            //         ]
-            //     }
-            // ]
+    
         
     
     components:{
@@ -106,7 +112,8 @@ export default {
       Image3,
       Image4,
      Mask,
-      CV
+      CV,
+      SpaceX
     },
     methods:{
       followLink(link){
