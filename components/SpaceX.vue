@@ -11,35 +11,50 @@
                id="parent"
                 class="d-flex align-content-start"
               >
+            
               <v-col >
-                  <v-img
-                   
-                    :max-height="height"
-                    max-width="350"
-                    height="auto"
-                    width="100%"
-                    :src="`${item.image}`"
-                  />
-                
-              </v-col>
-               <!-- <div class="d-sm-none d-none d-md-flex">
-               <v-col >
-                  <v-img
-                    :max-width="width"
-                    max-height="510"
+                 
+                   <v-img
+                     :max-height="height"
+                    max-width="400"
                     height="auto"
                     width="100%"
                     :src="`${item.image2}`"
                   />
                 
               </v-col>
-               </div> -->
+              
+               <div class="d-sm-none d-none d-md-flex">
+               <v-col >
+                  <v-img
+                    :max-height="height"
+                    max-width="340"
+                    height="auto"
+                    width="100%"
+                    :src="`${item.image}`"
+                  />
+                
+              </v-col>
+               </div>
+                <div class="d-sm-none d-none d-md-flex">
+               <v-col >
+                  <v-img
+                   
+                    :max-height="height"
+                    max-width="340"
+                    height="auto"
+                    width="100%"
+                    :src="`${item.image3}`"
+                  />
+                
+              </v-col>
+               </div>
               
             </v-card>
-           
+            
               <v-card>
                      
-                <v-row class="d-flex justify-center pa-2">
+                 <v-row class="d-flex justify-center pa-2">
                         <div v-for="link in item.links" 
                             :key="link" 
                         >
@@ -48,14 +63,14 @@
                           class="mt-4 ml-12"
                           max-height="200px"
                           color="#0a75ad"
-                          @click="followLink(link)"
+                          @click="goTo(link)"
                           >
                           {{link}}</v-btn>
                       </div>
                       </v-row>
                   
-                   <div  class="d-flex align-content-start">
-                        <v-card-text id="text"  class="d-flex flex-wrap">
+                   <div  class="d-flex">
+                        <v-card-text id="text"  class="d-flex flex-wrap text-left">
                             
                          {{item.description}}
                     
@@ -70,9 +85,10 @@
                         </v-chip>
                          </v-row>
                           </v-card-text>
-                    </div>
-                 
-                </v-card>
+                    
+                
+              </div>
+            </v-card>
           </v-col>
           
       </v-row>
@@ -84,18 +100,27 @@
 <script>
 export default {
     computed: {
-      height () {
+      width () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 300
+          case 'xs': return 450
           case 'sm': return 400
           case 'md': return 500
-          case 'lg': return 550
+          case 'lg': return 750
           case 'xl': return 800
         }
       },
+      height(){
+         switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 400
+          case 'sm': return 500
+          case 'md': return 600
+          case 'lg': return 700
+          case 'xl': return 700
+        }
+      }
      
     },
-    props:["item"]
+    props:["item", "goTo"]
 }
 </script>
 <style scoped>

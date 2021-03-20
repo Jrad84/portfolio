@@ -47,7 +47,7 @@
                           class="mt-4 ml-12"
                           max-height="200px"
                           color="#0a75ad"
-                          @click="followLink(link)"
+                          @click="goTo(link)"
                           >
                           {{link}}</v-btn>
                       </div>
@@ -69,7 +69,7 @@
                         </v-chip>
                          </v-row>
                           </v-card-text>
-                         </div>
+                    </div>
                  
                 </v-card>
           </v-col>
@@ -85,16 +85,16 @@ export default {
     computed: {
       width () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 300
-          case 'sm': return 400
-          case 'md': return 500
+          case 'xs': return 350
+          case 'sm': return 450
+          case 'md': return 550
           case 'lg': return 550
           case 'xl': return 800
         }
       },
      
     },
-    props:["item"]
+    props:["item", "goTo"]
 }
 </script>
 <style scoped>

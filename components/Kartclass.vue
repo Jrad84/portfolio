@@ -49,9 +49,10 @@
                           class="mt-4 ml-12"
                           max-height="200px"
                           color="#0a75ad"
-                          @click="followLink(link)"
+                          @click="goTo(link)"
                           >
-                          {{link}}</v-btn>
+                          {{link}}
+                          </v-btn>
                       </div>
                       </v-row>
                   
@@ -85,6 +86,7 @@
 
 
 export default { 
+   props: ["kartclass", "goTo"],
   computed: {
       width () {
         switch (this.$vuetify.breakpoint.name) {
@@ -97,76 +99,12 @@ export default {
       },
      
     },
-    props: ["kartclass", "followLink"],
-      methods:{
-      followLink(link){
-           console.log("link: " + link)
-        switch (link) {
-          case "Front-end Code":
-              window.open("https://github.com/Jrad84/DS_Karting/", "_blank");
-             
-            break;
-          case "Back-end Code":
-              window.open("https://github.com/Jrad84/kartclass-backend/", "_blank");
-              break;
-          case "Demo":
-              window.open("https://drive.google.com/file/d/1dRIsZJWDGZ-3z83TiQ9SWnekvjutmiqQ/view?usp=sharing", "_blank");
-              break;
-          default:
-            break;
-        }
-      }
-    }
+   
+
 
 }
 </script>
 
 <style scoped>
-/* #mainImg {
- 
-   max-height: 400px;
-  max-width: 400;
-  min-width: 100%;
-  min-height: 250px;
-  object-fit: contain;
-}
 
-.kcImage {
-  max-height: 400px;
-  max-width: 200px;
-  min-width: 100%;
-  min-height: 100px;
-  object-fit:contain;
-  margin-top: 2px;
-}
-#text {
-    color:white;
-    white-space: pre-line;
-    position: relative;
-    max-height: 400px;
-    
-}
-#parent{
-    display: flex;
-    width: 1150px;
-    height: 400px;
-}
-.child1{
- height: 400px;
- 
-}
-.child2{
- height: 200px;
- display:inline-block;
-   
-}
-.child3{
- height: 20px;
- justify-content: space-between;
-}
-
-#chip {
-    padding: 15px;
-    margin-left: 25px;
-} */
 </style>

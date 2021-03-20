@@ -1,8 +1,8 @@
 <template>
   <div >
-    <Kartclass :kartclass="kartclass" :followLink="followLink" />
-    <CV :item="cv" />
-    <SpaceX :item="space" />
+    <Kartclass :kartclass="kartclass" :goTo="followLink" />
+    <CV :item="cv" :goTo="followLink"  />
+    <SpaceX :item="space" :goTo="followLink" />
  
   </div>
 </template>
@@ -12,6 +12,8 @@ import Image1 from "~/assets/kc1.png"
 import Image2 from "~/assets/mask_256_40.png"
 import Image3 from "~/assets/spaceX.jpg"
 import Image4 from "~/assets/kc2.png"
+import SX from "~/assets/sx.jpg"
+import SX3 from "~/assets/sx3.jpg"
 import Mask from "~/assets/mask.png"
 import Kartclass from "~/components/Kartclass"
 import CV from "~/components/CV"
@@ -35,8 +37,6 @@ const data = {
                 "PostgreSQL"
                ],
                links: [
-                 "Front-end code",
-                 "Back-end code",
                  "View site"
                ]
         }
@@ -66,8 +66,12 @@ const cvData = {
 const sp =    {
                     title: "SpaceX Mobile app",
                     image: Image3,
-                   
-                    description: "For my custom project in my mobile app develeopment class, I developed an app to track both upcoming and past SpaceX launches including details about the launch and details about the different rockets used.",
+                    image2: SX,
+                    image3: SX3,
+                    description: "For my custom project in my mobile app develeopment class, I developed an app to track " +
+                    "both upcoming and previous SpaceX launches including details about the launch and details about the " +
+                    " different rockets used." + "\n\n" + "I wrote this app in Java and I used GraphQL to fetch data from an " +
+                    "existing SpaceX API.",
                     tech: [
                       "Java",
                       "GraphQL"
@@ -102,7 +106,25 @@ export default {
               
            }
     },
-        
+    methods:{
+      followLink(link){
+           console.log("link: " + link)
+          switch (link) {
+            case "View site":
+                window.open("https://www.kartclass.com", "_blank");
+              
+              break;
+            case "Back-end Code":
+                window.open("https://github.com/Jrad84/kartclass-backend/", "_blank");
+                break;
+            case "Demo":
+                window.open("https://drive.google.com/file/d/1dRIsZJWDGZ-3z83TiQ9SWnekvjutmiqQ/view?usp=sharing", "_blank");
+                break;
+            default:
+              break;
+          }
+        }
+    },
     
         
     
@@ -111,7 +133,9 @@ export default {
       Image2,
       Image3,
       Image4,
-     Mask,
+      SX,
+      SX3,
+      Mask,
       CV,
       SpaceX
     },
