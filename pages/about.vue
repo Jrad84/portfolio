@@ -42,7 +42,10 @@
                         <p class="display-1 text--primary">
                             
                         </p>
-                        <p>I completed my studies in November 2020 with a GPA of 3.15
+                        <p>I decided on a career change after completing a few online coding courses and it turned
+                          out to be the best decision for me as I felt like I had finally discovered something I was
+                          passionate about. I love creating applications from code and all of the joys and frustrations involved,
+                          especially solving a problem that's had me stuck for days!
                            </p>
                         </v-card-text>
                         <v-card-actions class="pt-0">
